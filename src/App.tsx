@@ -7,6 +7,7 @@ import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
 import Surveillance from "./pages/Surveillance";
 import Analytics from "./pages/Analytics";
+import ProviderAnalytics from "./pages/ProviderAnalytics";
 import Reports from "./pages/Reports";
 import NotFound from "./pages/NotFound";
 
@@ -23,6 +24,7 @@ const App = () => (
             <Route index element={<Dashboard />} />
             <Route path="/surveillance" element={<Surveillance />} />
             <Route path="/analytics" element={<Analytics />} />
+            <Route path="/provider-analytics" element={<ProviderAnalytics />} />
             <Route path="/reports" element={<Reports />} />
           </Route>
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

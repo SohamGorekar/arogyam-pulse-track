@@ -1,4 +1,4 @@
-import { BarChart3, MapPin, TrendingUp, FileText, Home } from "lucide-react";
+import { BarChart3, MapPin, TrendingUp, FileText, Home, Users } from "lucide-react";
 import { NavLink, useLocation } from "react-router-dom";
 import {
   Sidebar,
@@ -16,6 +16,7 @@ const menuItems = [
   { title: "Main Dashboard", url: "/", icon: Home },
   { title: "Disease Surveillance", url: "/surveillance", icon: MapPin },
   { title: "Health Analytics", url: "/analytics", icon: TrendingUp },
+  { title: "Provider Analytics & Adoption", url: "/provider-analytics", icon: Users },
   { title: "Reports & Admin", url: "/reports", icon: FileText },
 ];
 
