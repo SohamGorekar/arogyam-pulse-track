@@ -645,7 +645,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { MapPin, Search, TrendingUp, AlertTriangle, Eye } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { MapPin, Search, TrendingUp, AlertTriangle, Eye, MoreHorizontal, FileText, Users, Phone, MapIcon, CheckCircle, XCircle, Clock, AlertCircle } from "lucide-react";
 
 // Type definitions
 declare global {
@@ -1039,9 +1040,57 @@ const Surveillance = () => {
                     </td>
                     <td className="py-2 px-4">{(alert.aiConfidence * 100).toFixed(0)}%</td>
                     <td className="py-2 px-4">
-                      <Button variant="ghost" size="sm">
-                        <Eye className="w-4 h-4" />
-                      </Button>
+                      <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                          <Button variant="ghost" size="sm">
+                            <MoreHorizontal className="w-4 h-4" />
+                          </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-48">
+                          <DropdownMenuItem className="flex items-center gap-2">
+                            <Eye className="w-4 h-4" />
+                            View Details
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="flex items-center gap-2">
+                            <FileText className="w-4 h-4" />
+                            Generate Report
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="flex items-center gap-2">
+                            <Users className="w-4 h-4" />
+                            Assign Team
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="flex items-center gap-2">
+                            <Phone className="w-4 h-4" />
+                            Contact Facility
+                          </DropdownMenuItem>
+                          <DropdownMenuItem className="flex items-center gap-2">
+                            <MapIcon className="w-4 h-4" />
+                            Field Investigation
+                          </DropdownMenuItem>
+                          {alert.status === "Active" && (
+                            <>
+                              <DropdownMenuItem className="flex items-center gap-2">
+                                <Clock className="w-4 h-4" />
+                                Mark Under Investigation
+                              </DropdownMenuItem>
+                              <DropdownMenuItem className="flex items-center gap-2">
+                                <CheckCircle className="w-4 h-4" />
+                                Mark Resolved
+                              </DropdownMenuItem>
+                            </>
+                          )}
+                          {alert.status === "Under Investigation" && (
+                            <DropdownMenuItem className="flex items-center gap-2">
+                              <CheckCircle className="w-4 h-4" />
+                              Mark Resolved
+                            </DropdownMenuItem>
+                          )}
+                          <DropdownMenuItem className="flex items-center gap-2 text-destructive">
+                            <AlertCircle className="w-4 h-4" />
+                            Escalate Alert
+                          </DropdownMenuItem>
+                        </DropdownMenuContent>
+                      </DropdownMenu>
                     </td>
                   </tr>
                 ))}
