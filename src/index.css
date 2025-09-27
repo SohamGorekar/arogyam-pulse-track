@@ -67,6 +67,13 @@ All colors MUST be HSL for consistent theming.
     --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(142 71% 55%));
     --gradient-warning: linear-gradient(135deg, hsl(var(--warning)), hsl(38 92% 65%));
 
+    /* Chart color palette for data visualization */
+    --chart-1: 259 42% 51%;
+    --chart-2: 224 64% 33%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 84% 60%;
+
     /* Professional shadows for cards and data panels */
     --shadow-card: 0 2px 8px -2px hsl(220 13% 91% / 0.8);
     --shadow-elevated: 0 8px 24px -4px hsl(220 13% 91% / 0.12);

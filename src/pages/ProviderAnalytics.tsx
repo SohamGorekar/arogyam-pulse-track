@@ -31,68 +31,68 @@ const ProviderAnalytics = () => {
 
   // Chart Data
   const doctorAdoptionData = [
-    { name: "Government Doctors", value: 70, count: 2947 },
-    { name: "Private Doctors", value: 30, count: 1263 }
+    { name: "Private/Clinical Doctors", value: 68, count: 2863 },
+    { name: "Government Doctors", value: 32, count: 1347 }
   ];
 
   const patientEncountersData = [
-    { name: "Govt. Facilities", value: 85, count: 12750 },
-    { name: "Private Facilities", value: 15, count: 2250 }
+    { name: "Private Facilities", value: 62, count: 9300 },
+    { name: "Govt. Facilities", value: 38, count: 5700 }
   ];
 
   // Table Data
   const providerEngagementData = [
     {
-      providerType: "Government Doctor",
-      totalRegistered: "2,947",
-      dailyActive: "1,180",
-      avgPatientLoad: "12.5"
+      providerType: "Private/Clinical Doctor",
+      totalRegistered: "2,863",
+      dailyActive: "1,845",
+      avgPatientLoad: "15.2"
     },
     {
-      providerType: "Private Doctor", 
-      totalRegistered: "1,263",
-      dailyActive: "340",
-      avgPatientLoad: "8.2"
+      providerType: "Government Doctor", 
+      totalRegistered: "1,347",
+      dailyActive: "485",
+      avgPatientLoad: "9.8"
+    },
+    {
+      providerType: "Private Clinic/Hospital",
+      totalRegistered: "1,125",
+      dailyActive: "892",
+      avgPatientLoad: "42.8"
     },
     {
       providerType: "Government Hospital",
-      totalRegistered: "1,295",
-      dailyActive: "892",
-      avgPatientLoad: "85.6"
-    },
-    {
-      providerType: "Private Clinic",
-      totalRegistered: "555",
-      dailyActive: "156",
-      avgPatientLoad: "32.4"
+      totalRegistered: "725",
+      dailyActive: "456",
+      avgPatientLoad: "28.6"
     }
   ];
 
   const topFacilitiesData = [
-    { rank: 1, facilityName: "General Hospital Ernakulam", encounters: "2,450", location: "Ernakulam" },
-    { rank: 2, facilityName: "Medical College Thiruvananthapuram", encounters: "2,285", location: "Thiruvananthapuram" },
-    { rank: 3, facilityName: "District Hospital Kozhikode", encounters: "1,892", location: "Kozhikode" },
-    { rank: 4, facilityName: "Rajiv Gandhi Institute Thrissur", encounters: "1,745", location: "Thrissur" },
-    { rank: 5, facilityName: "Government Hospital Kottayam", encounters: "1,620", location: "Kottayam" },
-    { rank: 6, facilityName: "Aster Medcity Kochi", encounters: "1,485", location: "Ernakulam" },
-    { rank: 7, facilityName: "District Hospital Palakkad", encounters: "1,340", location: "Palakkad" },
-    { rank: 8, facilityName: "KMCT Medical College", encounters: "1,265", location: "Kozhikode" },
-    { rank: 9, facilityName: "Apollo Hospitals Bangalore", encounters: "1,180", location: "Karnataka" },
-    { rank: 10, facilityName: "Government Hospital Kannur", encounters: "1,095", location: "Kannur" }
+    { rank: 1, facilityName: "Aster Medcity Kochi", encounters: "3,450", location: "Ernakulam" },
+    { rank: 2, facilityName: "Apollo Hospitals Kerala", encounters: "3,285", location: "Kochi" },
+    { rank: 3, facilityName: "KIMS Hospital Trivandrum", encounters: "2,892", location: "Thiruvananthapuram" },
+    { rank: 4, facilityName: "Rajagiri Hospital Aluva", encounters: "2,745", location: "Ernakulam" },
+    { rank: 5, facilityName: "General Hospital Ernakulam", encounters: "2,620", location: "Ernakulam" },
+    { rank: 6, facilityName: "Medical Trust Hospital", encounters: "2,485", location: "Kochi" },
+    { rank: 7, facilityName: "Medical College Thiruvananthapuram", encounters: "2,340", location: "Thiruvananthapuram" },
+    { rank: 8, facilityName: "Sunrise Hospital Kakkanad", encounters: "2,265", location: "Ernakulam" },
+    { rank: 9, facilityName: "District Hospital Kozhikode", encounters: "2,180", location: "Kozhikode" },
+    { rank: 10, facilityName: "Lakeshore Hospital Kochi", encounters: "2,095", location: "Ernakulam" }
   ];
 
   const chartConfig = {
-    government: {
-      label: "Government",
+    private: {
+      label: "Private",
       color: "hsl(var(--chart-1))"
     },
-    private: {
-      label: "Private", 
+    government: {
+      label: "Government", 
       color: "hsl(var(--chart-2))"
     }
   };
 
-  const COLORS = ["hsl(var(--chart-1))", "hsl(var(--chart-2))"];
+  const COLORS = ["#8b5cf6", "#3b82f6"];
 
   return (
     <div className="space-y-6">
@@ -123,7 +123,7 @@ const ProviderAnalytics = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle>Doctor Adoption (Public vs. Private)</CardTitle>
+            <CardTitle>Doctor Adoption (Private vs. Public)</CardTitle>
             <CardDescription>Distribution of registered doctors by sector</CardDescription>
           </CardHeader>
           <CardContent>
@@ -153,7 +153,7 @@ const ProviderAnalytics = () => {
 
         <Card className="border-border/50">
           <CardHeader>
-            <CardTitle>Patient Encounters (Public vs. Private)</CardTitle>
+            <CardTitle>Patient Encounters (Private vs. Public)</CardTitle>
             <CardDescription>Distribution of patient visits by facility type</CardDescription>
           </CardHeader>
           <CardContent>
