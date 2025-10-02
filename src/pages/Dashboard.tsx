@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Users, Activity, AlertTriangle, Shield } from "lucide-react";
+import { DashboardAIChat } from "@/components/DashboardAIChat";
 
 const Dashboard = () => {
   // Mock data for demonstration
@@ -90,6 +91,9 @@ const Dashboard = () => {
 
   return (
     <div className="space-y-6">
+      {/* AI Assistant */}
+      <DashboardAIChat />
+      
       {/* Page Header */}
       <div>
         <h1 className="text-3xl font-bold text-primary">Mission Control Dashboard</h1>
